@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+<meta charset="utf-8" />   
+<title>home </title>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+body{
+    text-align: center;    
+}
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: normal;
+    color: #8ac640;
+    font-size: 2.5em;
+}
+footer{
+text-align: center; 
+  margin-top: 8px;
+   background-color: #DFB887;
+}
+</style>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<script src='static/Chart.min.js'></script>      
+</head>
+<body>
+	<header>
+      <div class="container">
+        <h1 class="logo"><a href="{{ url_for('index') }}">Flask Chart web app</a></h1>
+        <strong>
+		<nav>
+          <ul class="menu">
+		   <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('barchart') }}">Barchart</a></li>
+            <li><a href="{{ url_for('linechart') }}">Linechart</a></li>
+			<li><a href="{{ url_for('piechart') }}">Piechart</a></li>
+          </ul>
+        </nav>
+		</strong>
+      </div>
+    </header>
+	 <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+<footer>
+	&copy; Copyright 2018 RIF 
+ </footer>		
+</body></html>
